@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon name="accessibility-outline"></ion-icon>
+      Calculadora IMC
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-label>Peso: {{Peso}}</ion-label>
+  <div id="range">
+  <ion-range (ionChange)="onIonChange($event)" [min]="0" [max]="250">
+    <ion-icon slot="start" name="add-outline"></ion-icon>
+    <ion-icon slot="end" name="remove-circle-outline"></ion-icon>
+  </ion-range>
+  </div>
+  <ion-label>Altura: {{altura}}</ion-label>
+  <div id="range">
+  <ion-range (ionChange)="IonAltura($event)" [min]="0" [max]="250">
+    <ion-icon slot="start" name="add-outline"></ion-icon>
+    <ion-icon slot="end" name="remove-circle-outline"></ion-icon>
+  </ion-range>
+  </div>
+
+  <ion-button (click)="Imc()" (click)="FuncaoCondicao()" fill="outline">Calcular</ion-button>
+
+  <br>
+  <br>
+  <ion-label>O seu IMC é de {{total}} e você esta {{condicao}} </ion-label>
+</ion-content>
